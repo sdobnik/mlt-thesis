@@ -1,0 +1,38 @@
+% Define author names at the beginning of the document:
+%  \newauthor[cmdname]{displayname}{colour}
+% where displayname is the (short) name that will be placed 
+% at the start of comments, and cmdname is the name that 
+% will be used in the command to add comments. If cmdname is 
+% not given, displayname is used; but note that it must be 
+% usable as part of a Latex command (i.e. no spaces, etc).
+% Give also a colour that will be used to distinguish this 
+% author's comments.
+%
+% Then add comments with the command:
+% \cmt<cmdname>{Comment text here}
+% For example, if I define myself as the author:
+% \newauthor{MGW}{red}
+% then I can add comments using:
+% \cmtMGW{This is my comment}
+%
+% You can also pass through options to the \todo command 
+% for a comment, such as the inline option:
+% \cmtMGW[inline]{My inline comment}
+
+\RequirePackage[colorinlistoftodos]{todonotes}
+\RequirePackage{ifthen}
+\usepackage{}
+
+\newcommand{\newauthor}[3][]{%
+    % If #1 is not given, use #2 by default as the cmd name
+    \def\@tempa{#1}%
+    \ifx\@tempa\@empty%
+        \def\@authid{#2}%
+    \else%
+        \def\@authid{#1}%
+    \fi%
+    % Define the \cmtX command with the colour and so on
+    \expandafter\newcommand\csname cmt\@authid\endcsname[2][]{%
+        \todo[color=#3, ##1]{\textit{[#2]} ##2}%
+    }%
+}

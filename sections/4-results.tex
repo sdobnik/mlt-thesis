@@ -1,0 +1,19 @@
+\section{Results and Discussion}
+
+This is a nice table, borrowed from \citet{viloria2021topmodel}.
+
+\label{sec:results}
+\begin{table}[h]
+\centering
+\begin{tabular}{cccccccc} 
+\toprule
+\textbf{ } & \textbf{ Algorithm } & \textbf{ Alignment } & \textbf{ Vocab Size } & \textbf{ Epochs } & \textbf{ Dims } & \textbf{ Freq Threshold } & \textbf{ $\rho$ }  \\
+English    & FT              & OP               & ALL (16429)      & 5                 & 300             & 10               & .469            \\
+German     & W2V             & OP               & ALL (218507)     & 5                 & 25              & 5                & .706            \\
+Latin      & W2V             & INC              & -                & 5                 & 10              & 10               & .529            \\
+Swedish    & FT              & OP               & 5000             & 10                & 50              & 10               & .651            \\
+\bottomrule
+\end{tabular}
+\caption{Top-performing models for each language and their hyperparameters. Abbreviations: W2V=Word2Vec, FT=FastText, OP=Orthogonal Procrustes, INC=Incremental.}
+\label{tab:top-models}
+\end{table}

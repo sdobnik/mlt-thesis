@@ -1,0 +1,91 @@
+\usepackage{fontspec}
+%\usepackage[activate,final]{microtype}
+%\newfontfeature{Microtype}{protrusion=default;expansion=default;}
+
+%\usepackage{times}
+
+%\newfontfamily\csffamily{Arial Narrow}
+%\setromanfont[Ligatures=TeX]{Times New Roman}
+%\setsansfont[Ligatures=TeX]{Arial}
+%\setmonofont[Ligatures=TeX]{Courier New}
+
+%\newfontfamily\csffamily{Liberation Sans Narrow}
+%\setromanfont[Ligatures=TeX]{Liberation Serif}
+%\setsansfont[Ligatures=TeX]{Liberation Sans}
+%\setmonofont[Ligatures=TeX]{Liberation Mono}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% NEW IN V2: COMMENTS %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Below we define commands to allow for nice comments within the rendered PDF
+% Adapt these for your own name if you want to
+% USAGE: \cmtSUP{This is a comment in the margin} --> Will add a comment in the margin, from `SUP`
+% USAGE: \cmtSUP[inline]{This is an inline comment} --> Will add an inline comment, from `SUP`
+\usepackage{comments}
+\newauthor[SUP]{Supervisor}{cyan}
+\newauthor[STU]{Student}{green}  
+
+\newfontfamily\csffamily{Liberation Sans Narrow}
+\setromanfont[Ligatures=TeX]{FreeSerif}
+\setsansfont[Ligatures=TeX]{FreeSans}
+\setmonofont[Ligatures=TeX]{FreeMono}
+
+\usepackage{natbib}
+\bibliographystyle{apalike2}
+\setlength{\bibhang}{15mm}
+
+\usepackage[margin=2.5cm]{geometry}
+\setlength{\skip\footins}{10mm}
+
+%\renewcommand{\thesection}{}
+%\renewcommand{\thesubsection}{}
+%\renewcommand{\thesubsubsection}{}
+
+\let\@subtitle\@empty
+\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+
+\renewcommand\maketitle{%
+\parbox[b][4em][t]{40mm}{%
+\vspace{-10mm}%
+\includegraphics[width=35mm]{logo/gu_logo_blue}}%
+\parbox[b][4em][t]{100mm}{%
+{\csffamily\fontsize{17pt}{20pt}\selectfont\bfseries\MakeUppercase{Department of Philosophy,}\par\MakeUppercase{Linguistics and Theory of Science}}%
+}\par%
+\vspace{60mm}%
+{\csffamily\bfseries\fontsize{28pt}{34pt}\selectfont\MakeUppercase{\@title}\par}%
+{\csffamily\fontsize{24pt}{29pt}\selectfont\@subtitle\par}%
+\vspace{15mm}%
+{\sffamily\bfseries\fontsize{15pt}{18pt}\selectfont\@author}\par}
+
+%\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-1.5ex \@plus -1ex \@minus -.2ex}%
+                                   {0.5ex \@plus.2ex}%
+                                   {\normalfont\csffamily\bfseries\fontsize{18pt}{22pt}\selectfont}}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-1.0ex\@plus -1ex \@minus -.2ex}%
+                                     {0.1ex \@plus .1ex}%
+                                     {\normalfont\csffamily\fontsize{15pt}{16pt}\selectfont}}
+
+
+
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                     {-0.8ex\@plus -1ex \@minus -.2ex}%
+                                     {0.1ex \@plus .1ex}%
+                                     {\normalfont\sffamily\bfseries\fontsize{12pt}{13pt}\selectfont}}
+
+\def\@seccntformat#1{\csname #1ignore\expandafter\endcsname\csname the#1\endcsname\quad}
+%\let\sectionignore\@gobbletwo
+%\let\subsectionignore\@gobbletwo
+%\let\subsubsectionignore\@gobbletwo
+\let\latex@numberline\numberline
+\def\numberline#1{\if\relax#1\relax\else\latex@numberline{#1}\fi}
+
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{1.3em}}
+\renewcommand*\l@subsection{\@dottedtocline{1}{1.8em}{2.3em}}
+
+\setlength\parindent{0pt}
+\setlength{\parskip}{\baselineskip}%
+
+%\makeatother

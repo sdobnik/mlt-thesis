@@ -1,0 +1,165 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{mlt-thesis-2015}
+
+% With Xetex/Luatex this shouldn't be used
+%\usepackage[utf8]{inputenc}
+
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{setspace}
+\usepackage{subfiles} 
+\usepackage{hyperref}
+\usepackage{booktabs}
+%\graphicspath{ {figures/} }
+
+\hypersetup{
+colorlinks,
+allcolors={blue}
+}
+
+
+\title{This is the title}
+\subtitle{This is the subtitle}
+\author{R. Giskard Reventlov}
+
+\begin{document}
+
+%% ============================================================================
+%% Title page
+%% ============================================================================
+\begin{titlepage}
+
+\maketitle
+
+\vfill
+
+\begingroup
+\renewcommand*{\arraystretch}{1.2}
+\begin{tabular}{l@{\hskip 20mm}l}
+\hline
+Master's Thesis: & 30 credits \\
+Programme: & Master’s Programme in Language Technology\\
+Level: & Advanced level \\
+Semester and year: & Spring, 2021\\
+Supervisor: & Name of Supervisor\\
+Examiner: & Name of Examiner\\
+Keywords: & keyword 1, keyword 2, keyword 3
+\end{tabular}
+\endgroup
+
+\thispagestyle{empty}
+\end{titlepage}
+
+%% ============================================================================
+%% Abstract
+%% ============================================================================
+\newpage
+\singlespacing
+\section*{Abstract}
+
+
+This is the abstract.\cmtSUP{Read more about margin comments in mlt-thesis-2015.sty on lines 20-26.}
+\cmtSTU[inline]{Read more about inline comments in mlt-thesis-2015.sty on lines 20-26.}
+
+This is a template for master theses within the MLT programme at GU. The original author is Richard Johansson. It has since then been updated by Simon Hengchen. Questions (not compilation errors please, especially not the day before the deadline) should be addressed to \texttt{simon.hengchen@gu.se}.
+
+The ACL anthology\footnote{\url{https://aclanthology.org/}} provides canonical, recommended bibtex entries. Prefer these to those you find on Google Scholar or dblp or anywhere else. The official ACL anthology bibtex is included within this template (see bottom of \texttt{main.tex}), and if you use Overleaf to compile this template you can update the \texttt{anthology.bib} file automatically (click on it, then click ``refresh."). Should you want to cite papers not included in the ACL anthology, insert the bibtex entries in \texttt{personal.bib}. It is also included at the bottom of \texttt{main.tex}, and populated with some entries of work by GU researchers/some works you might find useful, e.g. \citet{harris1954distributional, sahlgren2008distributional, saussure1916, Kubhist, adesam2020superlim, eide2016swedish, hengchen-tahmasebi-2021-supersim}.
+
+Please compile this document with Xetex/Luatex. PDFLaTeX will also work, but in that case make sure that \texttt{utf-8} is enabled (line 6 of \texttt{main.tex}.) With Xetex/Luatex, weird Swedish characters such as ``å'' will work out of the box, you will not have to include them using e.g. ``\texttt{\textbackslash aa}.''
+
+The structure below is but a suggestion. Add/remove sections as you see fit.
+
+\thispagestyle{empty}
+
+%% ============================================================================
+%% Preface
+%% ============================================================================
+\newpage
+\section*{Preface}
+
+This is the preface.
+
+
+\thispagestyle{empty}
+
+%% ============================================================================
+%% Contents
+%% ============================================================================
+\newpage
+
+\begingroup
+\hypersetup{linkcolor=black} % This ensures that ONLY the ToC has black links
+\begin{spacing}{0.0}
+\tableofcontents
+\end{spacing}
+\endgroup
+
+\thispagestyle{empty}
+
+%% ============================================================================
+%% Introduction
+%% ============================================================================
+\newpage
+\setcounter{page}{1}
+
+\include{sections/1-introduction}
+
+%% TODO:
+% write motivation
+% proofread subsection 3
+% etc
+
+%% ALREADY DONE:
+% write xyz
+% fixed bibtex
+% etc
+
+%% You can add and edit these comments as you see fit for the other sections, or use some other tool
+
+\newpage
+
+\include{sections/2-background}
+
+\newpage
+
+\include{sections/3-exp-setup}
+
+\newpage
+
+\include{sections/4-results}
+
+\newpage
+
+\include{sections/5-ethics}
+
+\newpage
+
+\include{sections/6-limitations}
+
+\newpage
+
+\include{sections/7-future}
+
+\newpage
+
+\include{sections/8-conclusion}
+
+
+
+
+
+\addcontentsline{toc}{section}{References}
+\bibliography{anthology,personal}
+
+\newpage
+\appendix
+\input{sections/9.1-appendix-resources}
+
+
+\end{document}
+
+
