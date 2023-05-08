@@ -50,7 +50,9 @@ What ethical considerations one might consider when doing this project. Wll you 
 
 ## Dangers and limitations
 
-Are there any dangers and limitations you expect to arise while you work on this project? If so, what back-up steps do you plan so that you could still complete the project, perhaps with redefined research questions and goal.
+Are there any obstacles you might encounter or dangers you expect to arise while you work on this project? If so, what back-up steps do you plan so that you could still complete the project, perhaps with redefined research questions and goal.
+
+What are the limitations of the proposed plan? What questions that are relevant you might not be able to answer in this study and will be left for other studies.
 
 ## Any other relevant information
 
