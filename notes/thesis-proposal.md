@@ -16,7 +16,7 @@ Who are you working with
 
 ## Examiner
 
-Who will exmaine the thesis. You will get this information in your Masters Project class.
+Who will examine the thesis. You will get this information in your Masters Project class.
 
 ## Goal
 
